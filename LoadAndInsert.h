@@ -32,13 +32,13 @@ void load_from (const string& file_name, LinkedList<X>& hp){
     }
 }
 
-template<typename X,typename T>
-void insert (LinkedList<X>& ll, T first){
+template<typename T>
+void insert (LinkedList<T>& ll, T first){
     ll.insert(first);
 }
 
-template<typename X,typename T, typename... Args >
-void insert (LinkedList<X>& ll, T first, Args... items){
+template<typename T, typename... Args >
+void insert (LinkedList<T>& ll, T first, Args... items){
     ll.insert(first);
     insert(ll,items...);
 }

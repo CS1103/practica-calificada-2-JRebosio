@@ -26,7 +26,7 @@ int main()
     cin >> h;
     cout << "heap" << endl;
     cout << h;//4
-    //insert(h, 100, 200);
+    insert(h, 100, 200);
     cout << "heap" << endl;
     cout << h; //5
     load_from("data.txt", h);
