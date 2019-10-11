@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <string>
+
 using std::istream;
 using std::ostream;
 using std::istringstream;
@@ -36,8 +37,33 @@ public:
             temp = temp->next;
             delete temp2;
         }
-
+        head=nullptr;
     }
+
+    T getmax(){
+        Node<T>* temp = head;
+        T m=0;
+        while(temp!=nullptr){
+            if(temp->value > m) m=temp->value;
+            temp=temp->next;
+        }
+        return m;
+    }
+
+    void erase(){
+        if (head == nullptr) return;
+        Node<T>* temp = head;
+        Node<T>* temp2 = nullptr;
+        while (temp != nullptr) {
+            temp2 = temp;
+            temp = temp->next;
+            delete temp2;
+        }
+        head=nullptr;
+    }
+
+
+
     void insert(T value){
         Node<T>* temp = new Node<T>(value);
             if (head!=nullptr) {
@@ -50,9 +76,6 @@ public:
             }
     };
 
-    Node<T>* gethead(){
-       return head;
-    }
 /*
     void insert(T first_arg,Types... arg) {
             insert(first_arg);
@@ -67,8 +90,6 @@ public:
     template<typename X>
     friend ostream& operator<< (ostream& out,  const LinkedList<X>& ll);
 
-
-protected:
     Node<T>* head;
     Node<T>* tail;
 };

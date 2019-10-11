@@ -26,10 +26,12 @@ int main()
     cin >> h;
     cout << "heap" << endl;
     cout << h;//4
-    //insert(h, 100, 200); Lo implementé como metodo variadic
+    insert(h, 100, 200);
+    //Lo implementé como metodo variadic
     cout << "heap" << endl;
-    cout << h; //5
+    cout << h ; //5
     load_from("data.txt", h);
     cout << h; //6
+    cout<<h.getmax();
     return 0;
 }

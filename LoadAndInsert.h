@@ -12,13 +12,7 @@
 using namespace std;
 template<typename X>
 void load_from (const string& file_name, LinkedList<X>& hp){
-    Node <X>* temp = hp.gethead();
-    Node <X>* temp2 = nullptr;
-    while (temp != nullptr) {
-    temp2 = temp;
-    temp = temp->next;
-    delete temp2;
-    }
+    hp.erase();
     ifstream file(file_name);
     if(!file.is_open()) {
         cout<<"No hay archivo";
@@ -26,7 +20,7 @@ void load_from (const string& file_name, LinkedList<X>& hp){
     }
     string num;
     int numero;
-    while(getline(file,num)){
+    while(getline(file,num,'\n')){
         numero=stoi(num);
         hp.insert(numero);
     }
