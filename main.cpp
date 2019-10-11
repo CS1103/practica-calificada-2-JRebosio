@@ -32,6 +32,5 @@ int main()
     cout << h ; //5
     load_from("data.txt", h);
     cout << h; //6
-    cout<<h.getmax();
     return 0;
 }
